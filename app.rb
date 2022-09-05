@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class App
   def run
     choice = 0
