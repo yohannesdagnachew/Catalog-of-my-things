@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
-class App
+require_relative 'music'
+require_relative './classes/music_album'
+require_relative './classes/genre'
+
+class App # rubocop:disable Style/Documentation
+  include Music
+
+  def initialize
+    @music_album = []
+    @genres = []
+  end
+
   def run
     choice = 0
     while choice != 14
@@ -30,7 +41,9 @@ class App
       list_sources
     when 9
       create_book
-    when 10
+    when 15
+      create_genres
+    when 11
       create_album
     when 12
       create_movie
@@ -53,14 +66,7 @@ class App
     puts '11 - Add a music album'
     puts '12 - Add a movie'
     puts '13 - Add a game'
+    puts '15 - Add a genres'
     puts '14 - Quit App'
-  end
-
-  def list_books
-    puts 'Books'
-  end
-
-  def list_albums
-    puts 'Albums'
   end
 end
