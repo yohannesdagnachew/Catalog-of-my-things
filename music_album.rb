@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
+require_relative 'save_data'
+require_relative 'load_data'
 # music
 module Music
+  include SaveData
+  include LoadData
+
   def list_albums
     puts 'List of Albums'
     @music_album.each do |album|
@@ -30,11 +35,13 @@ module Music
     end
 
     @music_album << MusicAlbum.new(publish_date, on_spotify)
+    save_music(@music_album)
   end
 
   def create_genres
     puts 'Enter the genre name: '
     name = gets.chomp
     @genres << Genre.new(name)
+    save_genre(@genres)
   end
 end
