@@ -16,6 +16,7 @@ class App
       options
       choice = gets.chomp.to_i
       check(choice)
+      check2(choice)
     end
   end
 
@@ -25,14 +26,27 @@ class App
       list_books
     when 2
       list_albums
-    when 3
-      list_movies
     when 4
       list_games
     when 5
       list_genres
+    end
+  end
+
+  def check2(choice)
+    case choice
     when 6
       list_labels
+    when 7
+      list_authors
+    when 9
+      create_book
+    when 15
+      create_genres
+    when 11
+      create_album
+    when 13
+      create_game
     end
   end
 
