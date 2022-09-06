@@ -6,6 +6,7 @@ require 'date'
 # Game class
 class Game < Item
   attr_reader :multiplayer, :last_played_at
+  attr_accessor :author
 
   def initialize(date, multiplayer, last_played_at)
     super(date)
