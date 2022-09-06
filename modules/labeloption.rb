@@ -12,6 +12,8 @@ module LabelOptions
     title = gets.chomp
     print 'Please enter the label color: '
     color = gets.chomp
-    @labels << Label.new(title, color)
+    label = Label.new(title, color)
+    @labels << label
+    label
   end
 end
