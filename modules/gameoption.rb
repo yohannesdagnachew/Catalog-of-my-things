@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Game options module
 module Gameoptions
   def add_new_game

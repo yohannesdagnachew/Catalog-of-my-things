@@ -1,7 +1,6 @@
-# frozen_string_literal: true
-
 require 'date'
 
+# Item class
 class Item
   attr_accessor :genre, :author, :label
   attr_reader :publish_date, :archived
@@ -17,7 +16,7 @@ class Item
   end
 
   def move_to_archive
-    @archived = can_be_archived? ? true : false
+    @archived = true if can_be_archived? == true
   end
 
   def add_genre=(genre)
