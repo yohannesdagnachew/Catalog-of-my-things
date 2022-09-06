@@ -33,20 +33,6 @@ class App
       list_genres
     when 6
       list_labels
-    when 7
-      list_authors
-    when 8
-      list_sources
-    when 9
-      create_book
-    when 15
-      create_genres
-    when 11
-      create_album
-    when 12
-      create_movie
-    when 13
-      create_game
     end
   end
 
