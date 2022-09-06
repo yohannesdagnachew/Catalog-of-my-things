@@ -7,6 +7,8 @@ require_relative './classes/label'
 require_relative 'modules/gameoption'
 require_relative 'modules/bookoption'
 require_relative 'modules/labeloption'
+require_relative 'modules/savebooks'
+require_relative 'modules/savelabels'
 require_relative 'classes/game'
 require_relative 'classes/author'
 
@@ -15,13 +17,15 @@ class App
   include BookOptions
   include LabelOptions
   include Gameoptions
+  include ModelBooks
+  include ModelLabels
 
   def initialize
     @music_album = load_musics
     @genres = load_genres
     @authors = []
-    @books = []
-    @labels = []
+    @labels = load_labels
+    @books = load_books
   end
 
   def run
@@ -33,6 +37,8 @@ class App
       check2(choice)
       check3(choice)
     end
+    save_books
+    save_labels
   end
 
   def check(choice)
