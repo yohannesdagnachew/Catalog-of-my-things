@@ -20,6 +20,7 @@ class App
     @music_album = load_musics
     @genres = load_genres
     @authors = []
+    load_author
     @books = []
     @labels = []
   end
