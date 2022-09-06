@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
+require_relative 'modules/gameoption'
+require_relative 'classes/game'
+require_relative 'classes/author'
+
 class App
+  def initialize
+    @authors = []
+  end
+  include Gameoptions
   def run
     choice = 0
     while choice != 14
@@ -25,9 +33,9 @@ class App
     when 6
       list_labels
     when 7
-      list_authors
+      list sources
     when 8
-      list_sources
+      list_authors
     when 9
       create_book
     when 10
