@@ -1,0 +1,13 @@
+-- Create music_albums table
+create table music_albums(
+  id serial not null primary key,
+  archived boolean,
+  publish_date date,
+  on_spotify boolean
+);
+
+-- Create genres table
+create table genres(
+  id serial not null primary key,
+  name varchar(100)
+);
