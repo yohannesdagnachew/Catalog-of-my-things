@@ -15,3 +15,6 @@ class Book < Item
     super || cover_state == 'bad'
   end
 end
+
+book = Book.new('2018-06-30', 'Longhorn', 'bad')
+p book.move_to_archive
