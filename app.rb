@@ -2,12 +2,18 @@ require_relative 'music_album'
 require_relative './classes/music_album'
 require_relative './classes/genre'
 
+require_relative 'modules/gameoption'
+require_relative 'classes/game'
+require_relative 'classes/author'
+
 class App
   include Music
+  include Gameoptions
 
   def initialize
     @music_album = load_musics
     @genres = load_genres
+    @authors = []
   end
 
   def run
@@ -17,6 +23,7 @@ class App
       choice = gets.chomp.to_i
       check(choice)
       check2(choice)
+      check3(choice)
     end
   end
 
@@ -45,6 +52,19 @@ class App
       create_genres
     when 11
       create_album
+    end
+  end
+
+  def check3(choice)
+    case choice
+    when 8
+      list_authors
+    when 9
+      create_book
+    when 10
+      create_album
+    when 12
+      create_movie
     when 13
       create_game
     end
