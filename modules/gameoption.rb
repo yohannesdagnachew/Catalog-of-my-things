@@ -1,28 +1,36 @@
+require_relative 'loadauthor'
 # Game options module
 module Gameoptions
+  include LoadAuthor
   def add_new_game
     name = take_input_label('Enter the name of the game')
     last_played_at = take_input_label('Enter the date of the last played')
     date = take_input_label('Enter the publish date of the game')
+    game(date, name, last_played_at)
+  end
+
+  def game(date, name, last_played_at)
     Game.new(date, name, last_played_at)
   end
 
   def create_game
     game = add_new_game
-    choice = take_input_label('Do yo want to add new author of game[1] or add existing author[2]')
+    choice = take_input_label('Do you want to add new author of game[1] or add existing author[2]')
     choice = choice.to_i
     case choice
     when 1
       author = add_new_author
       @authors << author.add_item(game)
+      store_authors
     when 2
       author = add_existing_author
       author.add_item(game)
+      store_authors
     end
   end
 
   def add_existing_author
-    puts 'Existing authors'
+    put_lable('Existing authors')
     list_authors
     id = take_input_label('Enter the id of the author')
     id = id.to_i
@@ -32,25 +40,29 @@ module Gameoptions
   def add_new_author
     author_first_name = take_input_label('Enter the author first_name')
     author_last_name = take_input_label('Enter the author last name')
+    create_author(author_first_name, author_last_name)
+  end
+
+  def create_author(author_first_name, author_last_name)
     Author.new(author_first_name, author_last_name)
   end
 
   def list_authors
-    puts 'Authors'
-    puts 'ID  |  First Name  |  Last Name'
-    puts '--------------------------------'
+    put_lable('Authors')
+    put_lable('ID |')
+    put_lable('--------------------------------')
     @authors.each do |author|
-      puts "#{author.id} |  #{author.name}   |  #{author.last_name}"
+      puts "#{author.id}    #{author.name}    #{author.last_name}"
     end
   end
 
   def list_games
     puts 'Games'
-    puts '     Name     |     Author'
+    puts '     Name   |   Author'
     puts '--------------------------------'
     @authors.each do |games|
       games.items.each do |game|
-        puts "#{game.multiplayer}     #{game.author.name}"
+        puts "#{game.multiplayer}       #{game.author.name}"
       end
     end
   end
