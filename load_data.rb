@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'json'
 
-module LoadData # rubocop:disable Style/Documentation
+module LoadData
   def load_musics
     if File.exist?('./data/musics.json')
       musics_json = File.read('./data/musics.json')

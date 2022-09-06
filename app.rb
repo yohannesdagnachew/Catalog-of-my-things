@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 require_relative 'music_album'
 require_relative './classes/music_album'
 require_relative './classes/genre'
 
-class App # rubocop:disable Style/Documentation
+class App
   include Music
 
   def initialize

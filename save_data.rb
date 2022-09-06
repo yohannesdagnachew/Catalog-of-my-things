@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require 'json'
 
-module SaveData # rubocop:disable Style/Documentation
+module SaveData
   def save_music(musics)
     save_music = []
     musics.each do |music|

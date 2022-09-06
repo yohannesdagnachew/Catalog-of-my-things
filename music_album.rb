@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
 require_relative 'save_data'
 require_relative 'load_data'
-# music
+
 module Music
   include SaveData
   include LoadData
@@ -21,7 +19,7 @@ module Music
     end
   end
 
-  def create_album # rubocop:disable Metrics/MethodLength
+  def create_album
     puts 'Enter the music publish date: '
     publish_date = gets.chomp
     puts 'Is it on spotify? [y/n]: '
