@@ -23,9 +23,9 @@ class App
   def initialize
     @music_album = load_musics
     @genres = load_genres
-    @authors = []
     @labels = load_labels
     @books = load_books
+    load_author
   end
 
   def run
