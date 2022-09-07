@@ -31,7 +31,7 @@
 
 If you wish to run the project locally, please do the following:
 
-- Clone the repository to your local machine. - **`git clone https://github.com/yohannesdagnachew/Catalog-of-my-things`** - **`cd oop`**
+- Clone the repository to your local machine. - **`git clone https://github.com/yohannesdagnachew/Catalog-of-my-things`** - **`cd Catalog-of-my-things`**
 
 ## 🤝 Contributing
 
