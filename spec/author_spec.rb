@@ -59,7 +59,7 @@ describe Author do
     end
 
     it 'should have a date' do
-      expect(game.date).to eq('2019-12-12')
+      expect(game.publish_date).to eq('2019-12-12')
     end
   end
 end
