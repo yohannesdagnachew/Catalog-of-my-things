@@ -21,6 +21,7 @@ module LoadAuthor
   end
 
   def load_author
+    @authors = []
     author_file = './data/author.json'
     if File.exist?(author_file)
       file = File.read(author_file)

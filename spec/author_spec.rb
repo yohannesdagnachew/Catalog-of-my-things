@@ -6,25 +6,24 @@ describe Author do
   let(:game) { Game.new('2019-12-12', 'multiplayer', '2019-12-12') }
 
   describe '#author class' do
-
     it 'should be an instance of Author' do
-        expect(author).to be_an_instance_of(Author)
+      expect(author).to be_an_instance_of(Author)
     end
 
     it 'should have a name' do
-        expect(author.name).to eq('John')
+      expect(author.name).to eq('John')
     end
 
     it 'should have a last name' do
-        expect(author.last_name).to eq('Doe')
+      expect(author.last_name).to eq('Doe')
     end
 
     it 'should have an id' do
-        expect(author.id).to be_between(1, 1000)
+      expect(author.id).to be_between(1, 1000)
     end
 
     it 'should have an empty array of items' do
-        expect(author.items).to eq([])
+      expect(author.items).to eq([])
     end
   end
 
@@ -35,28 +34,28 @@ describe Author do
     end
 
     it 'adds author to item' do
-        author.add_item(game)
-        expect(game.author).to eq(author)
-        end
+      author.add_item(game)
+      expect(game.author).to eq(author)
+    end
 
     it 'does not add author to item if item already has author' do
-        author.add_item(game)
-        author.add_item(game)
-        expect(game.author).to eq(author)
+      author.add_item(game)
+      author.add_item(game)
+      expect(game.author).to eq(author)
     end
   end
 
-   describe '#Game class' do
+  describe '#Game class' do
     it 'should have a name' do
-        expect(game.multiplayer).to eq('multiplayer')
+      expect(game.multiplayer).to eq('multiplayer')
     end
 
     it 'should have a last played at' do
-        expect(game.last_played_at).to eq('2019-12-12')
+      expect(game.last_played_at).to eq('2019-12-12')
     end
 
     it 'be instance of' do
-        expect(game).to be_instance_of(Game)
+      expect(game).to be_instance_of(Game)
     end
   end
 end
