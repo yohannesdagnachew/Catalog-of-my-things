@@ -57,5 +57,9 @@ describe Author do
     it 'be instance of' do
       expect(game).to be_instance_of(Game)
     end
+
+    it 'should have a date' do
+      expect(game.date).to eq('2019-12-12')
+    end
   end
 end
